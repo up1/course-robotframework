@@ -1,0 +1,37 @@
+*** Settings ***
+Library		Selenium2Library
+
+
+*** Testcases ***
+Add New My TODO with count
+	Set Selenium Speed   1
+	Open Browser    http://up1todo.appspot.com/
+	Wait Until Page Contains Element    todo_text
+	
+	${before count}=   Get Matching Xpath Count   //li
+	Input Text      todo_text    My TODO...
+	Click Button    todo_button
+	${after count}=   Get Matching Xpath Count   //li
+	${result}=    Evaluate   ${after count}-${before count}
+	Should Be Equal As Integers   1   ${result}
+	Close Browser 
+
+Check First Page
+    Open Browser    http://up1todo.appspot.com/
+	Wait Until Page Contains   My TODO
+	Wait Until Page Contains Element    todo_text
+	Wait Until Page Contains Element    todo_button
+	Close Browser 
+
+Add New My TODO
+	Open Browser    http://up1todo.appspot.com/
+	Input Text      todo_text    First TODO...
+	Click Button    todo_button
+	Wait Until Page Contains   First TODO...
+	Close Browser
+
+Mark Success status of Latest My TODO
+	Open Browser    http://up1todo.appspot.com/
+	Wait Until Page Contains Element    todo_text
+	${count}=   Get Matching Xpath Count   //li
+	Click Element   xpath=//li[${count}]
