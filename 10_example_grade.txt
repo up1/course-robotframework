@@ -1,0 +1,43 @@
+*** Settings ***
+Library         Selenium2Library
+Suite Teardown	Close Browser
+
+*** Variables ***
+${HOME_URL}     http://demo-jenkins-web.herokuapp.com
+
+*** Test Cases ***
+Rule for Convert score to grade 
+	[Template]   Flow for convert score to grade 
+    #----------------#
+    # Score  | Grade #
+    #----------------#
+	   0		 F
+	   40		 F
+	   50		 D
+	   60		 C
+	   70		 B
+	   80		 A
+	   100		 A
+
+*** Keywords ***
+Flow for convert score to grade 
+	[Arguments]   ${score}   ${expected_result}
+    Open browser to home page
+    Fill in score    ${score}
+    I should see result    ${expected_result}
+    [Teardown]   Close Browser
+
+Open browser to home page
+	Open Browser    ${HOME_URL}
+	Maximize Browser Window
+	Title Should Be  Demo Web :: Grade Converter
+
+Fill in score
+	[Arguments]  ${score}
+	Input Text    score    ${score}
+	Click Button    convert
+
+I should see result
+	[Arguments]  ${expected_result}
+	Wait Until Page Contains    ${expected_result}
+	
