@@ -1,0 +1,14 @@
+*** Settings ***
+Library		Selenium2Library
+Library     OperatingSystem
+Library     Collections
+
+*** Variables ***
+${firefox profile path}    /Users/spock/somkiat/training/KIMBERLY-CLARK/robotframework/demo
+
+
+*** Testcases ***
+Test with Chrome
+	Open Browser    http://www.google.com    ff_profile_dir=${firefox profile path}
+	Wait Until Page Contains    Google
+	Close All Browsers

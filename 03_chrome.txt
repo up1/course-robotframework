@@ -1,0 +1,10 @@
+*** Settings ***
+Library		Selenium2Library
+Library     OperatingSystem
+
+
+*** Testcases ***
+Test with Chrome
+	Set Environment Variable    webdriver.chrome.driver   /usr/local/bin/chromedriver  
+	Open Browser   http://www.google.com   chrome
+	[Teardown]   Close Browser

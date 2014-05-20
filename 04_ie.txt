@@ -1,0 +1,10 @@
+*** Settings ***
+Library		Selenium2Library
+Library     OperatingSystem
+
+
+*** Testcases ***
+Test with Internet Explorer
+	Set Environment Variable    webdriver.ie.driver   <path to IEDriverServer.exe>
+	Open Browser   http://www.google.com   ie
+	[Teardown]   Close Browser

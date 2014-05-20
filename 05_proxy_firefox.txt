@@ -1,0 +1,14 @@
+*** Settings ***
+Library		Selenium2Library
+Library     OperatingSystem
+Library     Collections
+
+
+*** Testcases ***
+Test with Chrome
+	${proxy}=	Evaluate    sys.modules['selenium.webdriver'].Proxy()    sys, selenium.webdriver
+	${proxy.http_proxy}=    Set Variable    localhost:8888
+    Create Webdriver    Firefox    proxy=${proxy}
+	Go To    http://www.google.com
+	Wait Until Page Contains    Google
+	Close All Browsers
