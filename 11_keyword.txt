@@ -1,0 +1,20 @@
+*** Settings ***
+Library		Selenium2Library
+
+*** Testcases ****
+Valid login
+	Goto login page
+	Fill in username    demo
+	Fill in password    mode
+
+*** Keywords ***
+Goto login page
+	Open Browser    http://localhost:7272/html
+
+Fill in username
+	[Arguments]    ${username}
+	Input Text    username_field    ${username}
+
+Fill in password
+	[Arguments]    ${password}
+	Input Text    password_field    ${password}

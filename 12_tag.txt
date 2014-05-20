@@ -1,0 +1,29 @@
+*** Settings ***
+Library		Selenium2Library
+
+Force Tags      FunctionalTest
+Default Tags    ValidTest
+
+*** Testcases ****
+Valid login
+	Goto login page
+	Fill in username    demo
+	Fill in password    mode
+
+Invalid login with wrong password
+	[Tags]   InvalidTest
+	Goto login page
+	Fill in username    demo
+	Fill in password    xxxx
+
+*** Keywords ***
+Goto login page
+	Open Browser    http://localhost:7272/html
+
+Fill in username
+	[Arguments]    ${username}
+	Input Text    username_field    ${username}
+
+Fill in password
+	[Arguments]    ${password}
+	Input Text    password_field    ${password}
