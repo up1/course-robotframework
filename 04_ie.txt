@@ -5,6 +5,6 @@ Library     OperatingSystem
 
 *** Testcases ***
 Test with Internet Explorer
-	Set Environment Variable    webdriver.ie.driver   <path to IEDriverServer.exe>
+	Set Environment Variable    webdriver.ie.driver   r:\course\IEDriverServer.exe>
 	Open Browser   http://www.google.com   ie
-	[Teardown]   Close Browser
+	Close Browser

@@ -2,11 +2,11 @@
 Library		Selenium2Library
 
 *** Variables ***
-
+${DEMO URL}    http://demo-jenkins-web.herokuapp.com
 
 *** Testcases ***
 For A
-	Open Browser    http://demo-jenkins-web.herokuapp.com
+	Open Browser    ${DEMO URL}
 	Maximize Browser Window
 	Input Text    score  80
 	Click Element   convert
@@ -14,7 +14,7 @@ For A
 	Close Browser
 
 For B
-	Open Browser    http://demo-jenkins-web.herokuapp.com
+	Open Browser    ${DEMO URL}
 	Maximize Browser Window
 	Input Text    score  75
 	Click Element   convert
@@ -22,7 +22,7 @@ For B
 	Close Browser
 
 For C
-	Open Browser    http://demo-jenkins-web.herokuapp.com
+	Open Browser    ${DEMO URL}
 	Maximize Browser Window
 	Input Text    score  68
 	Click Element   convert
@@ -30,7 +30,7 @@ For C
 	Close Browser
 
 For D
-	Open Browser    http://demo-jenkins-web.herokuapp.com
+	Open Browser    ${DEMO URL}
 	Maximize Browser Window
 	Input Text    score  52
 	Click Element   convert
@@ -38,7 +38,7 @@ For D
 	Close Browser
 
 For F
-	Open Browser    http://demo-jenkins-web.herokuapp.com
+	Open Browser    ${DEMO URL}
 	Maximize Browser Window
 	Input Text    score  13
 	Click Element   convert

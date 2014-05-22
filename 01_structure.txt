@@ -1,10 +1,27 @@
 *** Settings ***
-
+Library		Selenium2Library
 
 *** Variables ***
 
 
 *** Testcases ***
+My first test case
+	Open Browser    http://www.kcprofessional.com
+	Maximize Browser Window
+	Input Text    q  test ทดสอบ
+	Click Element   xpath=//div[2][@class='btn_search']/input
+	Wait Until Page Contains   No Results
+	Close Browser
+
+My second test case
+	Open Browser    http://www.kcprofessional.com
+	Maximize Browser Window
+	Input Text    q  KLEENEX
+	#Click Link     My Product List
+	Click Element   xpath=//div[2][@class='btn_search']/input
+	Wait Until Page Contains   Site Search Result
+	Element Should Contain    resInfo-0    About 1,970 results
+	Close Browser
 
 
-*** Keyword ***
+*** Keywords ***

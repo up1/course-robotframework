@@ -1,0 +1,12 @@
+*** Settings ***
+Resource		resource_grade.txt
+
+*** Testcases ***
+Rule for Convert score to grade 
+	[Template]   Flow for convert score to grade 
+    #----------------#
+    # Score  | Grade #
+    #----------------#
+	   80		 A
+
+
