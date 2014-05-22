@@ -1,0 +1,18 @@
+*** Settings ***
+Library		Selenium2Library
+
+*** Variables ***
+
+
+*** Testcases ***
+My first test case
+    Open Browser    http://www.gmail.com  gc
+	Maximize Browser Window
+	Input Text     Email  your-email
+	Input Text     Passwd  your-password
+	Click Button   signIn
+	Wait Until Page Contains Element   xpath=//div[1]/a/span[@class='gb_X gbii']    10
+	Click Element   xpath=//div[1]/a/span[@class='gb_X gbii']
+	Wait Until Element Is Visible    xpath=//div[1]/a/span[@class='gb_X gbii']
+	Click Link    gb_71
+	Wait Until Page Contains    Sign in to continue to Gmail
