@@ -5,14 +5,37 @@ Library		Selenium2Library
 
 
 *** Testcases ***
-My first test case
-    Open Browser    http://www.gmail.com  gc
+Login and Logout
+    Open Browser    http://www.gmail.com
 	Maximize Browser Window
-	Input Text     Email  your-email
-	Input Text     Passwd  your-password
+	Input Text     Email  somkiat.p@gmail.com
+	Input Text     Passwd  <password>
 	Click Button   signIn
-	Wait Until Page Contains Element   xpath=//div[1]/a/span[@class='gb_X gbii']    10
-	Click Element   xpath=//div[1]/a/span[@class='gb_X gbii']
-	Wait Until Element Is Visible    xpath=//div[1]/a/span[@class='gb_X gbii']
+	Wait Until Page Contains Element   xpath=//div[1]/a/span[@class='gb_W gbii']    10
+	Click Element   xpath=//div[1]/a/span[@class='gb_W gbii']
+	Wait Until Element Is Visible    xpath=//div[1]/a/span[@class='gb_W gbii']
 	Click Link    gb_71
 	Wait Until Page Contains    Sign in to continue to Gmail
+
+
+Compose New Email
+    Open Browser    http://www.gmail.com
+	Maximize Browser Window
+	Input Text     Email  somkiat.p@gmail.com
+	Input Text     Passwd  <password>
+	Click Button   signIn
+	Wait Until Page Contains Element   xpath=//div[@class='z0']/div    10
+	Click Element   xpath=//div[@class='z0']/div
+
+	Wait Until Page Contains Element   xpath=//div[@class='wO nr l1']/textarea
+	Input Text    xpath=//div[@class='wO nr l1']/textarea   somkiat.p@gmail.com
+	Input Text    xpath=//div[@class='aoD az6']/input   ทดสอบ
+
+	Wait Until Element Is Visible    xpath=//div[@class='Am Al editable']/iframe
+	Select Frame    xpath=//div[@class='Am Al editable']/iframe
+	Wait Until Element Is Visible    xpath=//body
+	Execute JavaScript    document.body.innerHTML = "some html";
+	Unselect Frame
+
+	Wait Until Page Contains Element   xpath=//div[@class='J-J5-Ji']/div[@class='T-I J-J5-Ji aoO T-I-atl L3']
+	Click Element    xpath=//div[@class='J-J5-Ji']/div[@class='T-I J-J5-Ji aoO T-I-atl L3']
