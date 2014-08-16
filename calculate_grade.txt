@@ -1,6 +1,7 @@
 *** Testcases ***
 Grade Calculator
 	[Template]    Calculate my grade
+	88    A
 	80    A
 	70    B
 	60    C

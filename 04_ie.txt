@@ -1,10 +1,8 @@
 *** Settings ***
 Library		Selenium2Library
-Library     OperatingSystem
 
 
 *** Testcases ***
 Test with Internet Explorer
-	Set Environment Variable    webdriver.ie.driver   r:\course\IEDriverServer.exe>
 	Open Browser   http://www.google.com   ie
 	Close Browser

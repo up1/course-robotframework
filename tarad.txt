@@ -44,12 +44,8 @@ Fill in address and shipping information
 	Select From List By Index    send_city   5
 	Set Selenium Speed   0.5 second
 	Input Text    send_district    xxxzxx
-	#Element Should Contain    send_postcode    10900
 	Input Text    send_email    somkiat.p@gmail.com
 	Input Text    send_mobile    0868696209
 	Set Selenium Speed   3 second
 	Click Button    next-btn
 	Set Selenium Speed   0.5 second
-
-
-

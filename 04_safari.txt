@@ -1,0 +1,10 @@
+*** Settings ***
+Library		Selenium2Library
+Library     OperatingSystem
+
+
+*** Testcases ***
+Test with Safari
+	Set Environment Variable   SELENIUM_SERVER_JAR   <directory>selenium-server-standalone.jar
+	Open Browser   http://www.google.com   safari
+	Close Browser
