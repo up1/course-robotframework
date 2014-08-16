@@ -1,0 +1,55 @@
+*** Settings ***
+Library		Selenium2Library
+Test Teardown    Close All Browsers
+
+*** Testcases ***
+Buy product from TARAD.com
+	Choose product 2 item
+	Buy with non-member
+	Choose payment channel with Counter Service
+	Fill in address and shipping information
+	#Validate data in summary page
+
+*** Keywords ***
+Choose product 2 item
+	Open Browser    http://www.tarad.com/product/6126300
+	Maximize Browser Window
+	Select Radio Button    option_id    169991
+	Select From List By Index    product_qty   1
+	Click Button    f_buy
+
+	Wait Until Page Contains Element    xpath=//div[@class='getitem4']/span[@class='black-title']
+	Element Text Should Be    xpath=//div[@class='getitem4']/span[@class='black-title']    2 ชิ้น
+
+	Click Element    xpath=//div[@class='getitem8']/a
+
+Buy with non-member
+	#Title Should Be   dressuphouse
+	#Checkbox Should Be Selected    check_guest_register
+	#Unselect Checkbox    check_guest_register
+	Click Button    สั่งซื้อทันที
+
+Choose payment channel with Counter Service
+	Click Element    xpath=//li[@id='counter-service']/a
+	Set Selenium Speed   3
+	Click Button    next-btn
+	Set Selenium Speed   0.5
+
+Fill in address and shipping information
+	Input Text    send_firstname    สมเกียรติ
+	Input Text    send_lastname     ปุ๋ยสูงเนิน
+	Input Text    send_address    ที่อยู่จัดส่ง
+	Select From List By Index    send_province   2
+	Set Selenium Speed   2 second
+	Select From List By Index    send_city   5
+	Set Selenium Speed   0.5 second
+	Input Text    send_district    xxxzxx
+	#Element Should Contain    send_postcode    10900
+	Input Text    send_email    somkiat.p@gmail.com
+	Input Text    send_mobile    0868696209
+	Set Selenium Speed   3 second
+	Click Button    next-btn
+	Set Selenium Speed   0.5 second
+
+
+
