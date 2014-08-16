@@ -1,0 +1,13 @@
+*** Settings ***
+Library		Selenium2Library
+
+*** Variables ***
+${BROWSER}    firefox
+
+*** Testcases ***
+Test browser from command line
+	Open Browser   http://www.google.com   ${BROWSER}
+	Input Text      id=gbqfq    ทดสอบ
+	Click Button    id=gbqfb
+	Wait Until Page Contains    ทดสอบ
+	Close Browser
