@@ -1,0 +1,15 @@
+*** Test Cases ***
+Demo
+	@{my_words}=    Create List    Hello    Robot  SPRINT3R  X   Framework
+	Log    \n@{my_words}    console=True
+
+	${length}=    Get Length    ${my_words}
+	Log    \nLength = ${length}    console=True
+
+	Length Should Be     ${my_words}     5
+
+	:FOR    ${word}    IN    @{my_words}
+	\	Run Keyword If    '${word}' == 'X'    Exit For Loop
+
+	\	${length}=    Get Length    ${word}
+	\	Log    \n${word} have length ${length}    console=True
