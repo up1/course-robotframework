@@ -1,7 +1,25 @@
 *** Settings ***
+Documentation    ค้นหาข้อมูลจากระบบ google.com
+Library    Selenium2Library
+Test Teardown    Close Browser
 
 *** Variables ***
 
 *** Testcases ***
+ค้นหาอีโบลานะ
+	[Documentation]    ค้นหาอีโบลานะครับ
+	[Tags]   test
+	Open Browser    http://www.google.com
+	Input Text    id=gbqfq    อีโบลา
+	Click Button    id=gbqfb
+	Wait Until Page Contains    อีโบลา
+
+ค้นหา ebola นะ
+	[Documentation]    ค้นหา ebola sir
+	Open Browser    http://www.google.com
+	Input Text    id=gbqfq    ebola
+	Click Button    id=gbqfb
+	Wait Until Page Contains    ebola
+
 
 *** Keywords ***
