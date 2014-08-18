@@ -7,4 +7,4 @@ Library     OperatingSystem
 Test with Safari
 	#Set Environment Variable   SELENIUM_SERVER_JAR   /Users/somkiat/data/slide/robot-framework/sprinter-01-2014-08-16/demo/selenium-server-standalone-2.42.2.jar
 	Open Browser   http://www.google.com   safari
-	Close Browser
+	#Close Browser
