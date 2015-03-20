@@ -1,16 +1,22 @@
 *** Settings ***
-Library		Selenium2Library
+Library          Selenium2Library
+Test Setup       Open login page
+Test Teardown    Close Browser
+Resource         resources/login.txt
 
 *** Testcases ***
 Valid Login
-	Open Browser   http://localhost:7272/html
-	
-	Input Text     username_field   demo
-	Input Text     password_field   mode
-	Click Button   login_button
+	Fill in user name and password
+	Submit
+	Welcome page is show
 
-	Location Should Be   http://localhost:7272/html/welcome.html
+*** Keywords ***
+Fill in user name and password
+	Input Text     username_field   demo1
+	Input Text     password_field   mode
+
+Welcome page is show
+	Location Should Be   ${LOGIN PAGE}/welcome.html
 	Title Should Be      Welcome Page
 	Page Should Contain  Login succeeded
-
-	Close Browser 
+	Element Should Contain    xpath=//div/h1    Welcome Page

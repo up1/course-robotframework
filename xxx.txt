@@ -1,0 +1,16 @@
+*** Keywords ***
+เข้าไปที่หน้า login
+	Open Browser    ${LOGIN PAGE}
+
+กรอกชื่อ demo
+	Input Text    username_field    demo1
+
+กรอกรหัสผ่าน
+	[Arguments]    ${password}
+	Input Text    password_field    ${password}
+
+กดปุ่ม Login
+	Click Button    LOGIN
+
+ต้องเจอหน้า Welcome Page
+	Wait Until Page Contains    Welcome Page

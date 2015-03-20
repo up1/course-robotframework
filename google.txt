@@ -1,0 +1,10 @@
+*** Setting ***
+Library    Selenium2Library
+
+*** Testcases ***
+Google
+	Open Browser    http://www.google.com
+	Input Text    xxxx  iphone 6
+	Click Button    yyyy
+	Wait Until Page Contains    iphone 6
+	Xpath Should Match X Times  xpath=//[@id="newsbox"]/div[1]/a/em

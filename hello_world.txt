@@ -1,0 +1,23 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+
+*** Testcases ***
+ตรวจสอบ password ที่ปลอดภัย
+	เปิด browser ไปยังหน้าสมัครสมาชิก
+	กรอก password
+	แสดงเครื่องหมายถูก สีเขียว
+
+*** Keywords ***
+เปิด browser ไปยังหน้าสมัครสมาชิก
+	Open Browser    http://www.facebook.com
+
+กรอก password
+	Input Text    u_0_a    1234
+	Click Button   ลงทะเบียน
+
+แสดงเครื่องหมายถูก สีเขียว
+	Wait Until Page Contains    คุณชื่ออะไร
+
+

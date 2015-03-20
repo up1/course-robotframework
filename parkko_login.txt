@@ -1,0 +1,15 @@
+*** Settings ***
+Library                 Selenium2Library
+Test Setup           เข้าไปที่หน้า login
+Test Teardown    Close All Browsers
+Resource             xxx.txt
+
+*** Variables ***
+${LOGIN PAGE}    http://localhost:7272/html/
+
+*** Testcases ***
+Login ผ่าน
+	กรอกชื่อ demo
+	กรอกรหัสผ่าน    mode
+	กดปุ่ม Login
+	ต้องเจอหน้า Welcome Page

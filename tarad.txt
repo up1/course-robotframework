@@ -4,22 +4,26 @@ Test Teardown    Close All Browsers
 
 *** Testcases ***
 Buy product from TARAD.com
-	Choose product 2 item
+	เลือกสินค้า
 	Buy with non-member
 	Choose payment channel with Counter Service
 	Fill in address and shipping information
 	#Validate data in summary page
 
+
+
+
+
 *** Keywords ***
-Choose product 2 item
-	Open Browser    http://www.tarad.com/product/6126300
+เลือกสินค้า
+	Open Browser    http://www.tarad.com/product/6193631
 	Maximize Browser Window
-	Select Radio Button    option_id    169991
-	Select From List By Index    product_qty   1
+	#Select Radio Button    option_id    169991
+	#Select From List By Index    product_qty   1
 	Click Button    f_buy
 
 	Wait Until Page Contains Element    xpath=//div[@class='getitem4']/span[@class='black-title']
-	Element Text Should Be    xpath=//div[@class='getitem4']/span[@class='black-title']    2 ชิ้น
+	#Element Text Should Be    xpath=//div[@class='getitem4']/span[@class='black-title']    2 ชิ้น
 
 	Click Element    xpath=//div[@class='getitem8']/a
 

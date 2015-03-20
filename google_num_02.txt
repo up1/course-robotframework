@@ -1,0 +1,25 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+${GOOGLE URL}    http://www.google.com
+${KEYWORD INPUT}    lst-ib
+${SEARCH BUTTON}    btnG
+
+*** Testcases ***
+ทดสอบค้นหา Google
+    [Template]   ค้นหาและตรวจสอบผลการค้นหา
+    #---------------------------------------------------------------------------------------------#
+    #             Keyword                       |         Expected result                           #
+    #---------------------------------------------------------------------------------------------#
+             สยามชำนาญกิจ                           สยามชำนาญกิจ
+             สถาบันไอเอ็มซี                           สถาบันไอเอ็มซี
+
+*** Keywords ***
+ค้นหาและตรวจสอบผลการค้นหา
+    [Arguments]    ${KEYWORD}    ${EXPECTED RESULT}
+    Open Browser     ${GOOGLE URL}
+    Input Text    ${KEYWORD INPUT}    ${KEYWORD}
+    Click Button    ${SEARCH BUTTON}
+    Wait Until Page Contains    ${EXPECTED RESULT}
+    Close Browser
