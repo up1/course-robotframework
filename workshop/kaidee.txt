@@ -1,0 +1,15 @@
+*** Settings ***
+Library     Selenium2Library
+#Test Teardown    Close Browser
+
+
+*** Testcases ***
+Post my book on Kaidee
+    Open Browser    http://www.kaidee.com/posting/
+    Maximize Browser Window
+    Input Text    item_topic   [Test] my book
+    Choose File    input_uploadfile    selenium-screenshot-1.png
+    Input Text    item_price   500
+    Select From List By Label    province    นครราชสีมา
+    Select From List By Value    province    นครราชสีมา
+    Select From List By Index    province    นครราชสีมา

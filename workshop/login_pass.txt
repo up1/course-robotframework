@@ -1,7 +1,6 @@
 *** Settings ***
-Library                 Selenium2Library
-Test Teardown    Close Browser
 Resource             resources/login_resource.txt
+Test Teardown    Close Browser
 
 *** Testcases ***
 Login pass 1 :: Stable

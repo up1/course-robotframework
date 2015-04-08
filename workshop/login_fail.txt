@@ -1,0 +1,39 @@
+*** Settings ***
+Resource             resources/login_resource.txt
+Test Teardown    Close Browser
+
+*** Testcases ***
+Not input username and password
+    เข้าหน้า login
+    ทำการ login    ${EMPTY}    ${EMPTY}
+    ผู้ใช้งานต้องไปหน้า error
+
+Input only username
+    เข้าหน้า login
+    ทำการ login    demo    ${EMPTY}
+    ผู้ใช้งานต้องไปหน้า error
+
+Login with wrong username
+    เข้าหน้า login
+    ทำการ login    demo1    mode
+    ผู้ใช้งานต้องไปหน้า error
+
+Login with wrong password
+    เข้าหน้า login
+    ทำการ login    demo    123
+    ผู้ใช้งานต้องไปหน้า error
+
+Input only password
+    เข้าหน้า login
+    ทำการ login    ${EMPTY}    mode
+    ผู้ใช้งานต้องไปหน้า error
+
+Alter username and password
+    เข้าหน้า login
+    ทำการ login    mode    demo
+    ผู้ใช้งานต้องไปหน้า error
+
+
+*** Keywords ***
+ผู้ใช้งานต้องไปหน้า error
+    Title Should Be    Error Page
