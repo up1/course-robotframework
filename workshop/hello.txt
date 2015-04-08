@@ -1,0 +1,12 @@
+*** Settings ***
+
+*** Variables ***
+${MESSAGE}    Robot framework
+
+*** Testcases ***
+Hello robot framework
+	Say hi robot
+
+*** Keywords ***
+Say hi robot
+	Log to console    ${MESSAGE}

@@ -1,0 +1,22 @@
+*** Settings ***
+Library    Selenium2Library
+
+
+*** Testcases ***
+Post message in facebook
+	[Tags]   done
+	Login to facebook with my account
+
+	Click Element    u_0_10
+	Input Text    u_0_10    ดึกๆ ทำ Kata Robot framework ไป รอดูบอลไป
+	Click Button    Post
+
+
+
+
+*** Keywords ***
+Login to facebook with my account
+	Open Browser    http://www.facebook.com
+	Input Text      email    somkiat_spns@hotmail.com
+	Input Text      pass     s0mk1atPUI
+	Click Element    u_0_l

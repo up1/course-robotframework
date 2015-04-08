@@ -1,0 +1,17 @@
+*** Settings ***
+Library                 Selenium2Library
+Test Teardown    Close Browser
+Resource             resources/login_resource.txt
+
+*** Testcases ***
+Login pass 1 :: Stable
+	[Tags]    group01
+	เข้าหน้า login
+	ทำการ login    demo    mode
+	ผู้ใช้งานต้องไปหน้า welcome
+
+Login pass 2 :: Unstable
+	[Tags]    group02
+	เข้าหน้า login
+	ทำการ login    demo    mode1
+	ผู้ใช้งานต้องไปหน้า welcome
