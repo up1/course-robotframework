@@ -1,2 +1,7 @@
 *.html
 *.xml
+*.png
+.DS_Store
+login/
+workshop/robotframework-selenium2library-master.zip
+workshop/robotframework-selenium2library-master/
