@@ -1,0 +1,23 @@
+*** Variables ***
+${BASE URL}    http://localhost:7272/html/
+
+
+*** Keywords ***
+เข้าหน้า login
+	Open Browser    ${BASE URL}
+
+ทำการ login
+	[Arguments]    ${user name}    ${password}
+	Input Text    username_field    ${user name}
+	Input Text    password_field    ${password}
+	Click Button    LOGIN
+
+ผู้ใช้งานต้องไปหน้า welcome
+	Title Should Be    Welcome Page
+	Page Should Contain Link    xpath=//p/a
+	${link text}=    Get Text    xpath=//p/a
+	Should be equal as strings    ${link text}    logout
+	Location Should Be    ${BASE URL}welcome.html
+
+
+
