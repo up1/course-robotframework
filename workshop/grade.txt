@@ -1,0 +1,20 @@
+*** Settings ***
+Library                  Selenium2Library
+Suite Setup          Open Browser    http://demo-jenkins-web.herokuapp.com/
+Test Template      Calculate my grade
+Suite Teardown    Close Browser
+
+*** Testcases ***                                 score        grade
+Calculate for grade A                            80             A
+Calculate for grade B                            70             B
+Calculate for grade C                            60             C
+Calculate for grade D                            50             D
+Calculate for grade F                            40             F
+
+*** Keywords ***
+Calculate my grade
+    [Arguments]    ${score}    ${grade}
+    Go To    http://demo-jenkins-web.herokuapp.com/
+    Input Text    score    ${score}
+    Click Button    convert
+    Wait Until Page Contains    ${grade}

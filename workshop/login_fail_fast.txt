@@ -1,0 +1,23 @@
+*** Settings ***
+Resource             resources/login_resource.txt
+Suite Setup          เข้าหน้า login
+Test Template      Workflow of login failure
+Suite Teardown    Close Browser
+
+*** Testcases ***                                 username        password
+Not input username and password    ${EMPTY}        ${EMPTY}
+Input only username                                demo          ${EMPTY}
+Login wrong username                            demo1        mode
+Login wring password                              demo          123
+Input only password                                 ${EMPTY}  mode
+Alter username and password                 mode          demo
+
+*** Keywords ***
+Workflow of login failure
+    [Arguments]    ${username}    ${password}
+    Go To    ${BASE URL}
+    ทำการ login    ${username}    ${password}
+    ผู้ใช้งานต้องไปหน้า error
+
+ผู้ใช้งานต้องไปหน้า error
+    Title Should Be    Error Page

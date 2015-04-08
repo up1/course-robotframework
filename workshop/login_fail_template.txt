@@ -1,0 +1,27 @@
+*** Settings ***
+Resource             resources/login_resource.txt
+Suite Teardown    Close All Browsers
+
+*** Testcases ***
+Rule of login failure
+    [Template]    Workflow of login failure
+    #-----------------+------------------#
+    #   username  |      password #
+    #-----------------+------------------#
+        ${EMPTY}      ${EMPTY}
+        demo              ${EMPTY}
+        demo1            mode
+        demo              123
+        ${EMPTY}      mode
+        mode              demo
+
+
+*** Keywords ***
+Workflow of login failure
+    [Arguments]    ${username}    ${password}
+    เข้าหน้า login
+    ทำการ login    ${username}    ${password}
+    ผู้ใช้งานต้องไปหน้า error
+
+ผู้ใช้งานต้องไปหน้า error
+    Title Should Be    Error Page
