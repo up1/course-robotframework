@@ -18,5 +18,5 @@ Post message in facebook
 Login to facebook with my account
 	Open Browser    http://www.facebook.com
 	Input Text      email    somkiat_spns@hotmail.com
-	Input Text      pass     s0mk1atPUI
+	Input Text      pass     <password>
 	Click Element    u_0_l
