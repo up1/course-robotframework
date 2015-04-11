@@ -1,0 +1,9 @@
+*** Settings ***
+Library     Selenium2Library
+
+*** Variables ***
+${browser}    firefox
+
+*** Testcases ***
+Test browser
+    Open Browser    http://localhost:7272/html    ${browser}
