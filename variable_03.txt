@@ -1,0 +1,7 @@
+*** Variables ***
+@{MESSAGES}    Robot    Framework
+
+*** Testcases ***
+Hello list
+    Log to console    @{MESSAGES}[0]
+    Log to console    @{MESSAGES}[1]

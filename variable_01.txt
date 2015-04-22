@@ -1,0 +1,11 @@
+*** Variables ***
+${BASE_URL}    url1
+${BASE URL}     url2
+${BASEURL}      url3
+
+*** Testcases ***
+Hello scalar variable
+    Log to console    ${BASE_URL}
+    Log to console    ${BASEURL}
+    Log to console    ${BASEURL}
+    Log to console    XXXX${SPACE * 5}XXXX

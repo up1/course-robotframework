@@ -1,0 +1,9 @@
+*** Testcases ***
+Hello variable with arguments
+    Say hi    robot    framework
+
+*** Keywords ***
+Say hi
+    [Arguments]   ${first}   ${second}
+    Log to console    ${first}
+    Log to console    ${second}

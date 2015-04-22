@@ -1,0 +1,10 @@
+*** Settings ***
+Library                 Selenium2Library
+Test Teardown    Close Browser
+
+*** Variables ****
+${BROWSER}    firefox
+
+*** Testcases ***
+My blog
+    Open Browser    http://www.somkiat.cc    ${BROWSER}
