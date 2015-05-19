@@ -1,0 +1,16 @@
+*** Settings ***
+Library    OperatingSystem
+
+
+*** Test cases ***
+Compare 2 csv file with size
+    ${file_1_size}=   Get File Size   test1.csv
+    ${file_2_size}=   Get File Size   test2.csv
+    Should Be Equal    ${file_1_size}   ${file_2_size}
+
+Compare 2 csv file with content
+    ${file_1_content}=   Get File   test1.csv
+    ${file_2_content}=   Get File   test2.csv
+    Should Be Equal    ${file_1_content}   ${file_2_content}
+
+

@@ -1,0 +1,14 @@
+*** Settings ***
+Library     Selenium2Library
+#Test Teardown   Close Browser
+
+*** Test cases ***
+Test
+    Open Browser    http://www.kaidee.com/posting/  gc
+    Set Selenium Speed      1 seconds
+    #Click Element    province
+    #Execute Javascript    window.document.getElementById('province').scrollTop = window.document.getElementById('province').scrollHeight;
+    Select From List By Value   province    71
+    #//*[@id="province"]/option[78]
+
+    #Click Element    xpath=//[@id="province"]/option[78]
