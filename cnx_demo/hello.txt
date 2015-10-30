@@ -1,0 +1,50 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+
+*** Testcases ***
+Search data from google
+    [Documentation]    create by somkiat
+    Open google.com
+    Fill in keyword is ยี่เป็ง
+    Press search button
+    I see ยี่เป็ง เชียงใหม่ และ ลอยกระทง
+    Close Browser
+
+*** Keywords ***
+Open google.com
+    Open Browser    http://www.google.com
+
+Fill in keyword is ยี่เป็ง
+    Input Text    q    ยี่เป็ง
+
+Press search button
+    Click Button    btnG
+
+I see ยี่เป็ง เชียงใหม่ และ ลอยกระทง
+    Wait Until Page Contains    ยี่เป็ง
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+*** Settings ***
+Library    Selenium2Library
+Test Teardown    Close Browser
+
+*** Testcases ***
+Login sucess
+    เปิดหน้า login
+    กรอก username และ password
+    เข้าสู่ระบบ
+    User logged in success
+
+*** Keywords ***
+เปิดหน้า login
+    Open Browser    http://localhost:7272/html/
+
+กรอก username และ password
+    Input Text    username_field    demo
+    Input Text    password_field    mode
+
+เข้าสู่ระบบ
+    Click Button    LOGIN
+
+User logged in success
+    Wait Until Page Contains    Welcome Page
+    Page Should Contain Link    link=logout
+    Click Link    link=logout
+    Wait Until Page Contains    Login Page
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+*** Keywords ***
+Go to login page
+    Go To    http://localhost:7272/html/
+
+เปิดหน้า login
+    Open Browser    http://localhost:7272/html/
+
+กรอก username และ password
+    [Arguments]    ${username}    ${password}
+    Input Text    username_field    ${username}
+    Input Text    password_field    ${password}
+
+เข้าสู่ระบบ
+    Click Button    LOGIN
+
+I see error page
+    Wait Until Page Contains    Error Page

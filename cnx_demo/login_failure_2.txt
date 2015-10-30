@@ -1,0 +1,47 @@
+*** Settings ***
+Library    Selenium2Library
+Resource    resources/login.txt
+Suite Setup    เปิดหน้า login
+Test Setup     Go to login page
+Suite Teardown    Close Browser
+
+*** Testcases ***
+Wrong username
+    กรอก username และ password    demo1    mode
+    เข้าสู่ระบบ
+    I see error page
+
+Wrong password
+    กรอก username และ password     demo    mode1
+    เข้าสู่ระบบ
+    I see error page
+
+Wrong username and password
+    กรอก username และ password    demo1    mode1
+    เข้าสู่ระบบ
+    I see error page
+
+Empty username
+    กรอก username และ password    ${EMPTY}    mode
+    เข้าสู่ระบบ
+    I see error page
+
+Empty password
+    กรอก username และ password    demo    ${EMPTY}
+    เข้าสู่ระบบ
+    I see error page
+
+Empty username and password
+    กรอก username และ password    ${EMPTY}    ${EMPTY}
+    เข้าสู่ระบบ
+    I see error page
+
+
+
+
+
+
+
+
+
+

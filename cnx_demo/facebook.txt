@@ -1,0 +1,54 @@
+*** Settings ***
+Library    Selenium2Library
+Test Teardown    Close Browser
+
+*** Variables ***
+${expected result}    ขออภัย ดูเหมือนว่า somkiat_spns@hotmail.com จะเป็นของบัญชีที่มีอยู่แล้ว คุณต้องการ ? หรือไม่
+
+*** Testcases ***
+Failure register with existing email
+    Open register page
+    Fill in user information
+    Sign up
+    I will see error with existing email account
+
+*** Keywords ***
+Open register page
+    Open Browser    https://www.facebook.com/
+    Maximize Browser Window
+
+Fill in user information
+    Input Text    firstname    somkiat
+    Input Text    lastname    puisungnoen
+    Input Text    reg_email__    somkiat_spns@hotmail.com
+    Input Text    reg_email_confirmation__    somkiat_spns@hotmail.com
+    Input Text    reg_passwd__     1234567890
+    Select From List By Value    birthday_day    10
+    Select From List By Value    birthday_month    12
+    Select From List By Value    birthday_year    1981
+    Select Radio Button    sex    2
+
+Sign up
+    Click Button    สมัครใช้งาน
+
+I will see error with existing email account
+    Wait Until Page Contains    ขออภัย ดูเหมือนว่า somkiat_spns@hotmail.com จะเป็นของบัญชีที่มีอยู่แล้ว
+    Wait Until Element Is Visible    reg_error_inner
+
+    Wait Until Element Contains    reg_error_inner    ขออภัย ดูเหมือนว่า somkiat_spns@hotmail.com จะเป็นของบัญชีที่มีอยู่แล้ว คุณต้องการ ? หรือไม่
+
+    ${actual result}=    Get Text    id=reg_error_inner
+    Should Be Equal    ${expected result}    ${actual result}
+
+
+
+
+
+
+
+
+
+
+
+
+

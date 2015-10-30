@@ -1,0 +1,33 @@
+*** Settings ***
+Library    Selenium2Library
+Resource    resources/login.txt
+Suite Setup    Login.เปิดหน้า login
+Test Setup     Login.Go to login page
+Suite Teardown    Close Browser
+Test Template    Flow of login fail
+
+*** Testcases ***                                   USER          PASS
+Wrong username                                   demo1         mode
+Wrong password                                    demo           mode1
+Wrong username and password            demo1         mode1
+Empty username                                   ${EMPTY}    mode
+Empty password                                   demo1         ${EMPTY}
+Empty username and password           ${EMPTY}   ${EMPTY}
+
+*** Keywords ***
+Flow of login fail
+    [Arguments]    ${username}    ${password}
+    Login.กรอก username และ password    ${username}    ${password}
+    Login.เข้าสู่ระบบ
+    Login.I see error page
+
+
+
+
+
+
+
+
+
+
+

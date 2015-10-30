@@ -1,0 +1,66 @@
+*** Settings ***
+Library    Selenium2Library
+Test Teardown    Close Browser
+
+*** Testcases ***
+Wrong username
+    เปิดหน้า login
+    กรอก username และ password    demo1    mode
+    เข้าสู่ระบบ
+    I see error page
+
+Wrong password
+    เปิดหน้า login
+    กรอก username และ password     demo    mode1
+    เข้าสู่ระบบ
+    I see error page
+
+Wrong username and password
+    เปิดหน้า login
+    กรอก username และ password    demo1    mode1
+    เข้าสู่ระบบ
+    I see error page
+
+Empty username
+    เปิดหน้า login
+    กรอก username และ password    ${EMPTY}    mode
+    เข้าสู่ระบบ
+    I see error page
+
+Empty password
+    เปิดหน้า login
+    กรอก username และ password    demo    ${EMPTY}
+    เข้าสู่ระบบ
+    I see error page
+
+Empty username and password
+    เปิดหน้า login
+    กรอก username และ password    ${EMPTY}    ${EMPTY}
+    เข้าสู่ระบบ
+    I see error page
+
+*** Keywords ***
+เปิดหน้า login
+    Open Browser    http://localhost:7272/html/
+
+กรอก username และ password
+    [Arguments]    ${username}    ${password}
+    Input Text    username_field    ${username}
+    Input Text    password_field    ${password}
+
+เข้าสู่ระบบ
+    Click Button    LOGIN
+
+I see error page
+    Wait Until Page Contains    Error Page
+
+
+
+
+
+
+
+
+
+
+
