@@ -1,0 +1,31 @@
+*** Settings ****
+Library    RequestsLibrary
+Library    Collections
+Suite Teardown    Delete All Sessions
+
+
+*** Testcases ***
+First testcase
+    [Tags]    get
+    Create Session    github    https://api.github.com
+    ${response}=    Get Request    github    /
+    Should Be Equal As Strings    ${response.status_code}    200
+
+Check my username
+    [Tags]    get
+    Create Session    github    https://api.github.com
+    ${response}=    Get Request    github    /users/up1
+    Should Be Equal As Strings    ${response.status_code}   200
+    Dictionary Should Contain Value    ${response.json()}    Somkiat Puisungnoen
+    Dictionary Should Contain Item    ${response.json()}    key=name    value=Somkiat Puisungnoen
+
+Check my username 2
+    [Tags]    get
+    Create Session    github    https://api.github.com
+    ${response}=    Get Request    github    /users/up1
+    Should Be Equal As Strings    ${response.status_code}   200
+    ${jsondata}=  To Json    ${response.content}
+    Should be Equal     ${jsondata['name']}     Somkiat Puisungnoen
+
+
+
