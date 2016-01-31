@@ -5,12 +5,14 @@ Suite Teardown    Delete All Sessions
 
 
 *** Testcases ***
+#https://api.github.com
 First testcase
     [Tags]    get
     Create Session    github    https://api.github.com
     ${response}=    Get Request    github    /
     Should Be Equal As Strings    ${response.status_code}    200
 
+#https://api.github.com/users/up1
 Check my username
     [Tags]    get
     Create Session    github    https://api.github.com
@@ -19,6 +21,7 @@ Check my username
     Dictionary Should Contain Value    ${response.json()}    Somkiat Puisungnoen
     Dictionary Should Contain Item    ${response.json()}    key=name    value=Somkiat Puisungnoen
 
+#https://api.github.com/users/up1
 Check my username 2
     [Tags]    get
     Create Session    github    https://api.github.com
@@ -27,5 +30,21 @@ Check my username 2
     ${jsondata}=  To Json    ${response.content}
     Should be Equal     ${jsondata['name']}     Somkiat Puisungnoen
 
+#https://api.github.com/search/users?q=rest&per_page=2
+Search data with query string
+    [Tags]    get
+    Create Session    github    https://api.github.com
+    ${parameters}=   Create Dictionary   q=rest     per_page=2
+
+    ${response}=    Get Request    github    /search/users    params=${parameters}
+
+    Should Be Equal As Strings    ${response.status_code}   200
+
+    ${jsondata}=  To Json    ${response.content}
+    ${result_size}=    Get Length    ${jsondata['items']}
+    Log to console    ${result_size}
+    Should Be Equal As Integers    ${result_size}    2
+
+    Length Should Be    ${jsondata['items']}    2
 
 
