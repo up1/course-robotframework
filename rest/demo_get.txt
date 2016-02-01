@@ -2,24 +2,35 @@
 Library    RequestsLibrary
 Library    Collections
 
+*** Variables ***
+${SERVER URL}     http://127.0.0.1:5000
+
 *** Testcases ***
 Check response code
-    Create session    httpbin    http://127.0.0.1:5000
+    Create session    httpbin    ${SERVER URL}
     ${response}=    Get request    httpbin    /
     Should be equal as strings    ${response.status_code}    200
 
 Check result in json
-    Create session    httpbin    http://127.0.0.1:5000
+    Create session    httpbin    ${SERVER URL}
     ${response}=    Get request    httpbin    /get
     ${jsondata}=  To Json    ${response.content}
     Should be equal as strings     ${jsondata['origin']}     127.0.0.1
 
 Send request with query string
-    Create session    httpbin    http://127.0.0.1:5000
+    Create session    httpbin    ${SERVER URL}
     ${parameters}=    Create Dictionary    name=somkiat    age=30
     ${response}=    Get request    httpbin    /get    params=${parameters}
     Should be equal as strings    ${response.status_code}    200
 
     ${jsondata}=  To Json  ${response.content}
     Should be Equal     ${jsondata['args']}     ${parameters}
+
+Working with basic authentication
+    ${datas}=    Create List    user    passwd
+    Create session    httpbin    ${SERVER URL}    auth=${datas}
+
+    ${response}=  Get request    httpbin  /basic-auth/user/passwd
+    Should be equal as strings    ${response.status_code}   200
+    Should be equal as strings    ${response.json()['authenticated']}   True
 
