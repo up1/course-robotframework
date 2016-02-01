@@ -30,7 +30,15 @@ Working with basic authentication
     ${datas}=    Create List    user    passwd
     Create session    httpbin    ${SERVER URL}    auth=${datas}
 
-    ${response}=  Get request    httpbin  /basic-auth/user/passwd
+    ${response}=  Get request    httpbin    /basic-auth/user/passwd
+    Should be equal as strings    ${response.status_code}   200
+    Should be equal as strings    ${response.json()['authenticated']}   True
+
+Working with digest authentication
+    ${datas}=    Create List    user    pass
+    Create digest session    httpbin    ${SERVER URL}    auth=${datas}
+
+    ${response}=  Get request    httpbin    /digest-auth/auth/user/pass
     Should be equal as strings    ${response.status_code}   200
     Should be equal as strings    ${response.json()['authenticated']}   True
 
