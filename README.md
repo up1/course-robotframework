@@ -1,4 +1,4 @@
-# course-robotframework
+# Course Robotframework in Action
 Workshop and Example of Robot Framework course
 
 ## Topics
