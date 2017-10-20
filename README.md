@@ -14,5 +14,6 @@ Workshop and Example of Robot Framework course
 * [ ] Manage test cases in Version control
 * [ ] REST API Testing with RequestsLibrary
 * [ ] REST API Testing with Postman
+* [ ] Working with Continuous Integration Server (Jenkins)
 
 # Keep learning
