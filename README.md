@@ -18,3 +18,4 @@ Workshop and Example of Robot Framework course
 * [ ] Working with Continuous Integration Server (Jenkins)
 
 # Keep learning
+* [Robotframework Website](http://robotframework.org/)
