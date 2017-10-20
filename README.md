@@ -12,6 +12,7 @@ Workshop and Example of Robot Framework course
 * [ ] Let's start with readable test cases
 * [ ] Tips and Trick
 * [ ] Manage test cases in Version control
-
+* [ ] REST API Testing with RequestsLibrary
+* [ ] REST API Testing with Postman
 
 # Keep learning
