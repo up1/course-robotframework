@@ -13,6 +13,7 @@ Workshop and Example of Robot Framework course
 * [ ] Tips and Trick
 * [ ] Manage test cases in Version control
 * [ ] REST API Testing with RequestsLibrary
+* [ ] Working with [Stubby4j](https://github.com/azagniotov/stubby4j)
 * [ ] REST API Testing with Postman
 * [ ] Working with Continuous Integration Server (Jenkins)
 
