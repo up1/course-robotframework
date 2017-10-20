@@ -1,0 +1,9 @@
+-  request:
+      method: GET
+      url: /v1/customer/1
+
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      file: output.json
