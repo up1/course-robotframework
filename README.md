@@ -19,3 +19,4 @@ Workshop and Example of Robot Framework course
 
 # Keep learning
 * [Robotframework Website](http://robotframework.org/)
+* [Demo of API testing](https://github.com/up1/go-restful-api)
