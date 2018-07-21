@@ -11,14 +11,12 @@ Search by robot
   เปิด browser ไปที่ google thailand
   ใส่ค่า   robot
   กดค้นหา
-#   ต้องเจอ Wikipedia ของ Robot
 
 Search by xyz
   [Tags]  testing
   เปิด browser ไปที่ google thailand
   ใส่ค่า   xyz
   กดค้นหา
-#   ต้องเจอ Wikipedia ของ Robot
 
 *** Keywords ***
 ใส่ค่า

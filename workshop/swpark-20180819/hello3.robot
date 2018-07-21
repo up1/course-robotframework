@@ -1,24 +1,34 @@
 *** Settings ***
 Library  SeleniumLibrary
+Test Setup   เปิด browser ไปที่ google thailand
 Test Teardown  Close Browser
 
 *** Variables ***
+${BROWSER}  chrome
 
 *** Testcases ***
 Search by robot
-  [Tags]  done
-  เปิด browser ไปที่ google thailand
-  ใส่ค่า robot
-  กดค้นหา
-#   ต้องเจอ Wikipedia ของ Robot
-
-Search by xyz
-  [Tags]  testing
-  เปิด browser ไปที่ google thailand
-  
-#   ต้องเจอ Wikipedia ของ Robot
+  [Template]  Search template
+  #----------------------------#
+  #  Input   | Expected result #
+  #----------------------------#
+     robot          robot
+     xyz            xyz
+     robot          robot
 
 *** Keywords ***
+Search template
+  [Arguments]   ${keyword}   ${expected}
+  ใส่ค่า   ${keyword}
+  กดค้นหา
+  Go To   https://www.google.co.th
+
+ใส่ค่า
+  [Arguments]  ${keyword}
+  Input Text  name:q  ${keyword}
+  SeleniumLibrary.Capture Page Screenshot
+
+
 ต้องเจอ Wikipedia ของ Robot
   SeleniumLibrary.Capture Page Screenshot
   Wait Until Element Contains   
@@ -33,11 +43,7 @@ Search by xyz
 กดค้นหา
   Press Key  name:q  \\13
 
-ใส่ค่า robot
-  Input Text  name:q  robot
-  SeleniumLibrary.Capture Page Screenshot
-
 เปิด browser ไปที่ google thailand
-  SeleniumLibrary.Open Browser  https://www.google.co.th  browser=gc 
+  SeleniumLibrary.Open Browser  https://www.google.co.th  browser=${BROWSER}
   SeleniumLibrary.Capture Page Screenshot
   
