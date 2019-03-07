@@ -1,4 +1,4 @@
-# Course Robotframework in Action
+# Course Robotframework 2 days
 Workshop and Example of Robot Framework course
 
 ## Topics
@@ -20,3 +20,6 @@ Workshop and Example of Robot Framework course
 # Keep learning
 * [Robotframework Website](http://robotframework.org/)
 * [Demo of API testing](https://github.com/up1/go-restful-api)
+
+# Resources
+* [RoboCon 2019](https://www.youtube.com/playlist?list=PLSK6YK5OGX1D-QpVap5C7NlfurQ1dsGbt)
