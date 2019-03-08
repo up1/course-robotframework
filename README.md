@@ -23,3 +23,6 @@ Workshop and Example of Robot Framework course
 
 # Resources
 * [RoboCon 2019](https://www.youtube.com/playlist?list=PLSK6YK5OGX1D-QpVap5C7NlfurQ1dsGbt)
+
+# Workshops
+* [SWPark 2019/03/07-08](https://github.com/up1/workshop-robotframework-20190308)
