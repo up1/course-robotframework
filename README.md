@@ -21,6 +21,14 @@ Workshop and Example of Robot Framework course
 * [Robotframework Website](http://robotframework.org/)
 * [Demo of API testing](https://github.com/up1/go-restful-api)
 
+# List of Libraries
+* [Builds-in Library](http://robotframework.org/robotframework/latest/libraries/BuiltIn.html)
+* [Collections Library](http://robotframework.org/robotframework/latest/libraries/Collections.html)
+* [String Library](http://robotframework.org/robotframework/latest/libraries/String.html)
+* [Selenium Library](http://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
+* [Requests Library](https://github.com/bulkan/robotframework-requests)
+* [Faker Library](https://pypi.org/project/robotframework-faker/)
+
 # Resources
 * [RoboCon 2019](https://www.youtube.com/playlist?list=PLSK6YK5OGX1D-QpVap5C7NlfurQ1dsGbt)
 
