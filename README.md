@@ -1,5 +1,5 @@
 # Course Robotframework 2 days
-Workshop and Example of Robot Framework course
+Workshop and examples of RobotFramework course
 
 ## Topics
 
