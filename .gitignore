@@ -1,6 +1,7 @@
 *.html
 *.xml
 *.png
+*.key
 .DS_Store
 login/
 workshop/robotframework-selenium2library-master.zip
