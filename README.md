@@ -42,3 +42,6 @@ Workshop and examples of RobotFramework course
 * [Json Server](https://github.com/typicode/json-server)
 * [MBTest](http://www.mbtest.org/)
 * [Postman](https://www.getpostman.com/)
+
+
+All codes and documents in this repository are free to use under the [MIT Licence](https://opensource.org/licenses/MIT).
