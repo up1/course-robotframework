@@ -36,6 +36,7 @@ Workshop and examples of RobotFramework course
 * [SWPark 2019/03/07-08](https://github.com/up1/workshop-robotframework-20190308)
 * [SWPark 2019/09/05-06](https://github.com/up1/workshop-robotframework-20190905)
 * [SWPark 2019/12/12-13](https://github.com/up1/workshop-robotframework-20191212)
+* [SWPark 2020/09/14-15](https://github.com/up1/https-github.com-up1-workshop-robotframework-20200914)
 
 
 # Mock API Server Tools
