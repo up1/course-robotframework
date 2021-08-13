@@ -10,14 +10,13 @@ Workshop and examples of RobotFramework course
 * [ ] Installation
 * [ ] Write first test case with Robotframework
 * [ ] Let's start with readable test cases
-* [ ] Tips and Trick
+* [ ] Tips and Trickห
 * [ ] Manage test cases in Version control
-* [ ] REST API Testing with RequestsLibrary
 * [ ] Working with [Stubby4j](https://github.com/azagniotov/stubby4j)
 * [ ] REST API Testing
-  * Requests Library
-  * RestInsrance
-  * Postman
+  * [Requests Library](https://github.com/MarketSquare/robotframework-requests)
+  * [RestInstance](https://github.com/asyrjasalo/RESTinstance/)
+  * [Postman](https://www.postman.com/)
 * [ ] Working with Continuous Integration Server (Jenkins)
 
 # Keep learning
