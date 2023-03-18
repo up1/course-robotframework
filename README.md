@@ -32,6 +32,7 @@ Workshop and examples of RobotFramework course
 * [Faker Library](https://pypi.org/project/robotframework-faker/)
 
 # Workshops
+* [Workshop 2023/03/16-17](https://github.com/up1/workshop-robot-20230316)
 * [SWPark 2021/08/16-17](https://github.com/up1/workshop-robot-20210816)
 * [SWPark 2020/12/17-18](https://github.com/up1/workshop-robotframework-20201217)
 * [SWPark 2020/09/14-15](https://github.com/up1/workshop-robotframework-20200914)
