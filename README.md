@@ -10,7 +10,7 @@ Workshop and examples of RobotFramework course
 * [ ] Installation
 * [ ] Write first test case with Robotframework
 * [ ] Let's start with readable test cases
-* [ ] Tips and Trickห
+* [ ] Tips and Tricks
 * [ ] Manage test cases in Version control
 * [ ] Working with [Stubby4j](https://github.com/azagniotov/stubby4j)
 * [ ] REST API Testing
@@ -18,6 +18,9 @@ Workshop and examples of RobotFramework course
   * [RestInstance](https://github.com/asyrjasalo/RESTinstance/)
   * [Postman](https://www.postman.com/)
 * [ ] Working with Continuous Integration Server (Jenkins)
+
+## Demo for workshop
+* [Web Login with Docker](https://github.com/up1/demo-login-workshop)
 
 # Keep learning
 * [Robotframework Website](http://robotframework.org/)
