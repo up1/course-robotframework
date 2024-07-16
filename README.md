@@ -34,15 +34,6 @@ Workshop and examples of RobotFramework course
 * [Requests Library](https://github.com/bulkan/robotframework-requests)
 * [Faker Library](https://pypi.org/project/robotframework-faker/)
 
-# Workshops
-* [Workshop 2023/03/16-17](https://github.com/up1/workshop-robot-20230316)
-* [SWPark 2021/08/16-17](https://github.com/up1/workshop-robot-20210816)
-* [SWPark 2020/12/17-18](https://github.com/up1/workshop-robotframework-20201217)
-* [SWPark 2020/09/14-15](https://github.com/up1/workshop-robotframework-20200914)
-* [SWPark 2019/12/12-13](https://github.com/up1/workshop-robotframework-20191212)
-* [SWPark 2019/09/05-06](https://github.com/up1/workshop-robotframework-20190905)
-* [SWPark 2019/03/07-08](https://github.com/up1/workshop-robotframework-20190308)
-
 # Mock API Server Tools
 * [Stubby4Node](https://github.com/mrak/stubby4node)
 * [Stubby4j](https://github.com/azagniotov/stubby4j)
