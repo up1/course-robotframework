@@ -53,6 +53,7 @@ Workshop and examples of RobotFramework course
 
 
 # Resources
+* [RobotCon 2024](https://www.youtube.com/watch?v=A91zc7-TCc0&list=PLSK6YK5OGX1CECNLS7E9H2iTsWPMZrHmA)
 * [RoboCon 2023](https://www.youtube.com/watch?v=lKu-9WKtYcg&list=PLSK6YK5OGX1DYqe35OX0_CqE1DEP7dI9I)
 * [RoboCon 2019](https://www.youtube.com/playlist?list=PLSK6YK5OGX1D-QpVap5C7NlfurQ1dsGbt)
 * [RoboCon](https://robocon.io/#previous-talks)
