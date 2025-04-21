@@ -2,7 +2,6 @@
 Workshop and examples of RobotFramework course
 
 ## Topics
-
 * [ ] Testing in general
 * [ ] Introduction to ATDD (Acceptance Test-Driven Development)
 * [ ] Why should you automated ?
@@ -18,6 +17,9 @@ Workshop and examples of RobotFramework course
   * [RestInstance](https://github.com/asyrjasalo/RESTinstance/)
   * [Postman](https://www.postman.com/)
 * [ ] Working with Continuous Integration Server (Jenkins)
+
+## More courses
+* [Advance Robotframework](https://github.com/up1/course-advance-robotframework)
 
 ## Demo for workshop
 * [Web Login with Docker](https://github.com/up1/demo-login-workshop)
